@@ -96,8 +96,6 @@ services:
       #      - saml_crt=
 
       - port=1880
-    ports:
-      - "1880:1880"
       # not needed if saml_baseurl has a value
       # - domain=34.64.164.95/nodered
       # - protocol=http
@@ -121,6 +119,8 @@ services:
       - tls_key=
       - tls_ca=
       - tls_passphrase=
+    ports:
+      - "1880:1880"
 volumes:
   mongodb_data:
     driver: local
