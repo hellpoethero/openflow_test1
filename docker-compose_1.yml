@@ -26,7 +26,7 @@ services:
   rabbitmq:
     labels:
       - "traefik.enable=true"
-      # - "traefik.http.routers.rabbitmq.rule=Host(`34.64.164.95`)"
+      # - "traefik.http.routers.rabbitmq.rule=Host(`34.64.88.125`)"
       - "traefik.http.routers.rabbitmq.entrypoints=web"
       - "traefik.http.services.rabbitmq.loadbalancer.server.port=15672"
     image: "rabbitmq:3-management"
@@ -42,7 +42,7 @@ services:
   web:
     labels:
       - "traefik.enable=true"
-      # - "traefik.http.routers.web.rule=Host(`34.64.88.125`)"
+      - "traefik.http.routers.web.rule=Host(`34.64.88.125`)"
       - "traefik.http.routers.web.entrypoints=web"
       - "traefik.frontend.passHostHeader=true"
     image: "cloudhack/openflow:1.0.87"
